@@ -12,12 +12,12 @@ class LoadingScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Logo ve yükleme göstergesi bölümü
-          Container(
+          SizedBox(
             width: double.infinity,
             child: Column(
               children: [
                 // Logo bölümü
-                Container(
+                SizedBox(
                   width: 150,
                   height: 150,
                   child: Image.asset(
@@ -25,18 +25,18 @@ class LoadingScreen extends StatelessWidget {
                     fit: BoxFit.contain,
                   ),
                 ),
-                
+
                 const SizedBox(height: 30),
-                
+
                 // Yükleme ikonu
                 const Icon(
                   CupertinoIcons.arrow_2_circlepath,
                   size: 40,
                   color: Colors.blue,
                 ),
-                
+
                 const SizedBox(height: 20),
-                
+
                 // Yükleniyor yazısı
                 const Text(
                   'Yükleniyor...',

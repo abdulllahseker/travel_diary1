@@ -26,16 +26,16 @@ class HomeScreen extends StatelessWidget {
             Container(
               height: 200,
               color: Colors.blue,
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(
+                  Icon(
                     CupertinoIcons.person_circle,
                     size: 80,
                     color: Colors.white,
                   ),
-                  const SizedBox(height: 10),
-                  const Text(
+                  SizedBox(height: 10),
+                  Text(
                     'Kullanıcı Adı',
                     style: TextStyle(
                       color: Colors.white,
