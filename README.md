@@ -53,9 +53,13 @@ lib/
 
 
 ## Ekran Görüntüleri
-
-
-
+![Giriş ekranı](images/giris_ekrani.png)
+![Ana ekran](images/ana_ekran.png)
+![Yan sekme](images/yan_sekme.png)
+![History ekranı](images/history_ekranipng)
+![Ses ekranı](images/ses_ekrani.png)
+![Profil ekranı](images/profil_ekrani.png)
+![Arama ekranı](images/arama_ekrani.png)
 ## Projeye Katkı Sağlama
 
 1. Projeyi forklayın
