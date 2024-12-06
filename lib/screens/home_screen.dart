@@ -1,6 +1,9 @@
 import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/core/constants.dart';
+import 'package:flutter_app/widgets/bottom_menu.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,7 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: arkaplanrenkim,
       // AppBar
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
@@ -24,10 +27,12 @@ class HomeScreen extends StatelessWidget {
 
       // Drawer (Yan Menü)
       drawer: Drawer(
+        backgroundColor: arkaplanrenkim,
+        elevation: 0,
         child: Column(
           children: [
             // Drawer Header
-            Container(
+            SizedBox(
               height: 200,
               //color: Colors.blue,
               child: const Column(
@@ -68,7 +73,7 @@ class HomeScreen extends StatelessWidget {
               leading: const Icon(CupertinoIcons.person),
               title: const Text('Profile'),
               onTap: () {
-                Navigator.pop(context);
+                context.go("/profile");
               },
             ),
             ListTile(
@@ -104,44 +109,7 @@ class HomeScreen extends StatelessWidget {
       ),
 
       // Alt navigasyon çubuğu
-      bottomNavigationBar: Container(
-        height: 70,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                CupertinoIcons.home,
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                CupertinoIcons.search,
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                CupertinoIcons.plus,
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                CupertinoIcons.bell,
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                CupertinoIcons.person,
-              ),
-            ),
-          ],
-        ),
-      ),
+      bottomNavigationBar: BottomMenu(),
     );
   }
 }
