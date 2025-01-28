@@ -141,7 +141,8 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Keşfet',
-            backgroundColor: Colors.orange, // Uygulama rengiyle uyumlu
+            backgroundColor:
+                Color.fromARGB(255, 255, 154, 1), // Uygulama rengiyle uyumlu
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.history),
