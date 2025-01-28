@@ -172,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
       },
       style: ElevatedButton.styleFrom(
         foregroundColor: Colors.orange,
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 247, 247, 247),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
