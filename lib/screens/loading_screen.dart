@@ -1,7 +1,5 @@
 import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/core/constants.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
@@ -11,8 +9,7 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-          arkaplanrenkim, //const Color.fromARGB(255, 236, 137, 137),
+      backgroundColor: const Color(0xFFFFA726), // Turuncu rengi
       body: SizedBox.expand(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center, // Ortalamak için
@@ -20,8 +17,8 @@ class LoadingScreen extends StatelessWidget {
             // Logo bölümü
             Expanded(
               child: SizedBox(
-                width: 150,
-                height: 150,
+                width: 200, // Daha büyük bir logo
+                height: 200,
                 child: Image.asset(
                   'assets/images/logo.webp',
                   fit: BoxFit.contain,
@@ -29,14 +26,24 @@ class LoadingScreen extends StatelessWidget {
               ),
             ),
 
+// "Uygulama Hazırlanıyor" yazısı
+            const Text(
+              "TRAVEL DİARY",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                letterSpacing: 5.5,
+              ),
+            ),
             // Yükleniyor yazısı
-            //CircularProgressIndicator(),
+            const SizedBox(height: 20),
 
             // Lottie animasyonu
             InkWell(
               onTap: () => context.go("/home"),
               child: SizedBox(
-                width: 400,
+                width: 300,
                 child: DotLottieLoader.fromAsset(
                   "assets/motions/loading.lottie",
                   frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
@@ -51,7 +58,7 @@ class LoadingScreen extends StatelessWidget {
             ),
 
             // Biraz boşluk
-            const SizedBox(height: 20),
+            const SizedBox(height: 60),
           ],
         ),
       ),

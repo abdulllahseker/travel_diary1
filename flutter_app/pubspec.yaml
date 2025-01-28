@@ -88,3 +88,14 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+  flutter:
+    assets:
+      - assets/images/paris.jpg
+      - assets/images/tokyo.jpg
+      - assets/images/newyork.webp
+      - assets/images/london.jpg
+      - assets/images/erkek.jpg
+      dependencies:
+  flutter:
+    sdk: flutter
+  google_fonts: ^3.0.1  # Google Fonts paketini ekledik
