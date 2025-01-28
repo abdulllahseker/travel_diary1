@@ -54,10 +54,10 @@ lib/
 
 ## Ekran Görüntüleri
 Giriş ekranı
-![Giriş ekranı](images/giris_ekrani.png)
+![giris_ekrani](https://github.com/user-attachments/assets/15a1c215-f91f-4354-a168-e464f06085ab)
 
 Ana ekran
-![Ana ekran](images/ana_ekran.png)
+![ana_ekran](https://github.com/user-attachments/assets/2896a145-0c6d-4415-b624-96ff8e5ed719)
 
 Yan sekme
 ![Yan sekme](images/yan_sekme.png)
@@ -65,14 +65,11 @@ Yan sekme
 History ekranı
 ![History ekranı](images/history_ekrani.png)
 
-Ses ekranı
-![Ses ekranı](images/ses_ekrani.png)
-
 Profil ekranı 
-![Profil ekranı](images/profil_ekrani.png)
+![profile_ekrani](https://github.com/user-attachments/assets/865e3926-1f3c-4630-beaf-9a250d4e7293)
 
 Arama ekranı
-![Arama ekranı](images/arama_ekrani.png)<>
+![search_ekrani](https://github.com/user-attachments/assets/31a9f19f-e13b-4b46-a833-dad131888420)
 
 ## Projeye Katkı Sağlama
 
