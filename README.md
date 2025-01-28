@@ -60,10 +60,16 @@ lib/
 ![ana_ekran](https://github.com/user-attachments/assets/2896a145-0c6d-4415-b624-96ff8e5ed719)
 
  
+![search_ekrani](https://github.com/user-attachments/assets/31a9f19f-e13b-4b46-a833-dad131888420)
+
+
+![history_ekrani](https://github.com/user-attachments/assets/443ab01d-cbdf-4c1a-9cdd-db77a0c10d59)
+
+
 ![profile_ekrani](https://github.com/user-attachments/assets/865e3926-1f3c-4630-beaf-9a250d4e7293)
 
 
-![search_ekrani](https://github.com/user-attachments/assets/31a9f19f-e13b-4b46-a833-dad131888420)
+
 
 ## Projeye Katkı Sağlama
 
