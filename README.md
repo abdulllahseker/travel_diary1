@@ -69,6 +69,13 @@ lib/
 ![profile_ekrani](https://github.com/user-attachments/assets/865e3926-1f3c-4630-beaf-9a250d4e7293)
 
 
+![ana_sayfa_karanlık](https://github.com/user-attachments/assets/823178dd-85f6-46e8-981b-c7734be4461f)
+
+
+![history_ekrani_karanlik](https://github.com/user-attachments/assets/0f83e6ca-96ec-4c1c-b03c-870ecaf98566)
+
+
+![profile_ekrani_karanlik](https://github.com/user-attachments/assets/1970bd34-a101-47a7-abf6-67e1c274951e)
 
 
 ## Projeye Katkı Sağlama
