@@ -1,6 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart'; // Yönlendirme için
 
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Profile Screen',
+      theme: ThemeData(
+        brightness: Brightness.light, // Açık mod
+        primarySwatch: Colors.orange,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color.fromARGB(255, 253, 152, 20),
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.orangeAccent,
+          unselectedItemColor: Colors.black54,
+        ),
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(color: Colors.black), // Açık modda siyah yazı
+          bodyMedium: TextStyle(color: Colors.black),
+          titleLarge: TextStyle(color: Colors.black),
+        ),
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark, // Karanlık mod
+        primarySwatch: Colors.orange,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color.fromARGB(255, 55, 55, 55),
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Color(0xFF303030),
+          selectedItemColor: Colors.orangeAccent,
+          unselectedItemColor: Colors.grey,
+        ),
+        textTheme: const TextTheme(
+          bodyLarge:
+              TextStyle(color: Colors.white), // Karanlık modda beyaz yazı
+          bodyMedium: TextStyle(color: Colors.white),
+          titleLarge: TextStyle(color: Colors.white),
+        ),
+      ),
+      themeMode: ThemeMode.system, // Sistemin tema ayarına göre mod seçimi
+      home: const ProfileScreen(),
+    );
+  }
+}
+
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -10,6 +62,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   int _selectedIndex = 3; // Başlangıçta 'Profile' sekmesi seçili
+  bool isDarkMode = false; // Karanlık mod kontrolü
 
   // Sekme tıklama fonksiyonu
   void _onItemTapped(int index) {
@@ -33,12 +86,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 204, 137),
+      backgroundColor: isDarkMode
+          ? const Color(0xFF303030) // Karanlık mod için arka plan
+          : const Color.fromARGB(255, 255, 204, 137), // Açık mod için arka plan
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 253, 152, 20),
+        backgroundColor: isDarkMode
+            ? const Color.fromARGB(255, 55, 55, 55) // Karanlık mod için app bar
+            : const Color.fromARGB(255, 253, 152, 20), // Açık mod için app bar
         title: const Text('Abdullah Şeker'),
         centerTitle: true,
-        actions: [],
+        actions: [
+          IconButton(
+            icon: Icon(isDarkMode ? Icons.sunny : Icons.nightlight_round),
+            onPressed: () {
+              setState(() {
+                isDarkMode = !isDarkMode; // Karanlık mod aç/kapat
+              });
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -84,7 +150,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ],
         selectedItemColor: Colors.orangeAccent, // Seçili ikon turuncu
         unselectedItemColor: Colors.black54, // Seçili olmayan ikonlar siyah
-        backgroundColor: Colors.white,
+        backgroundColor: isDarkMode ? const Color(0xFF303030) : Colors.white,
         elevation: 10,
       ),
     );
@@ -103,6 +169,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildUserInfo() {
     return Card(
       elevation: 5,
+      color: isDarkMode ? Colors.grey[800] : Colors.white,
       child: ListTile(
         leading:
             Icon(Icons.account_circle, size: 50, color: Colors.orangeAccent),
@@ -118,11 +185,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildActiveVisa() {
     return Card(
       elevation: 5,
+      color: isDarkMode ? Colors.grey[800] : Colors.white,
       child: ListTile(
         leading: Icon(Icons.airplane_ticket, size: 50, color: Colors.green),
         title: const Text('Aktif Vize Durumu',
             style: TextStyle(fontWeight: FontWeight.bold)),
-        subtitle: const Text('Amerika Vizesi - Kalan Süre: 4 Ay'),
+        subtitle: const Text('Amerika Vizesi - Kalan Süre: 4 Ay',
+            style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
         trailing: Icon(Icons.edit, color: Colors.orangeAccent),
       ),
     );
@@ -131,6 +200,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildVisitedCountries() {
     return Card(
       elevation: 5,
+      color: isDarkMode ? Colors.grey[800] : Colors.white,
       child: ListTile(
         leading: Icon(Icons.location_on, size: 50, color: Colors.orange),
         title: const Text('Gezilen Ülkeler',
@@ -138,9 +208,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-            Text('• Fransa (2019, Harcama: 10.000 TL)'),
-            Text('• Almanya (2021, Harcama: 12.500 TL)'),
-            Text('• Japonya (2022, Harcama: 18.000 TL)'),
+            Text('• Fransa (2019, Harcama: 10.000 TL)',
+                style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
+            Text('• Almanya (2021, Harcama: 12.500 TL)',
+                style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
+            Text('• Japonya (2022, Harcama: 18.000 TL)',
+                style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
           ],
         ),
         trailing: Icon(Icons.edit, color: Colors.orangeAccent),
@@ -151,6 +224,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildGallery() {
     return Card(
       elevation: 5,
+      color: isDarkMode ? Colors.grey[800] : Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -193,11 +267,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildBudget() {
     return Card(
       elevation: 5,
+      color: isDarkMode ? Colors.grey[800] : Colors.white,
       child: ListTile(
         leading: Icon(Icons.attach_money, size: 50, color: Colors.purple),
         title: const Text('Toplam Harcama',
             style: TextStyle(fontWeight: FontWeight.bold)),
-        subtitle: const Text('Toplam Harcama: 40.500 TL'),
+        subtitle: const Text('Toplam Harcama: 40.500 TL',
+            style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
         trailing: Icon(Icons.edit, color: Colors.orangeAccent),
       ),
     );
@@ -206,6 +282,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildTargetCountries() {
     return Card(
       elevation: 5,
+      color: isDarkMode ? Colors.grey[800] : Colors.white,
       child: ListTile(
         leading: Icon(Icons.flag, size: 50, color: Colors.blue),
         title: const Text('Hedef Ülkeler',
@@ -213,9 +290,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-            Text('• İtalya'),
-            Text('• Kanada'),
-            Text('• Yeni Zelanda'),
+            Text('• İtalya',
+                style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
+            Text('• Kanada',
+                style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
+            Text('• Yeni Zelanda',
+                style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
           ],
         ),
         trailing: Icon(Icons.edit, color: Colors.orangeAccent),
