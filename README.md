@@ -78,6 +78,7 @@ lib/
 ![profile_ekrani_karanlik](https://github.com/user-attachments/assets/1970bd34-a101-47a7-abf6-67e1c274951e)
 
 
+
 ## Projeye Katkı Sağlama
 
 1. Projeyi forklayın
