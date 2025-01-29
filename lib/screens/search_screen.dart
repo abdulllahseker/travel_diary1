@@ -101,7 +101,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   const SizedBox(height: 20),
                   _buildCityCard('Tokyo', 'assets/images/tokyo.jpg'),
                   const SizedBox(height: 20),
-                  _buildCityCard('New York', 'assets/images/newyork.webp'),
+                  _buildCityCard('New York', 'assets/images/newyork.jpeg'),
                   const SizedBox(height: 20),
                   _buildCityCard('London', 'assets/images/london.jpg'),
                 ],
