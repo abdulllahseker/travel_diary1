@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/core/routes.dart' show router;
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized(); // Flutter widget'larını başlat
   runApp(const MyApp());
 }
 
@@ -35,21 +35,15 @@ class _MyAppState extends State<MyApp> {
             primarySwatch: Colors.blue,
             brightness: Brightness.light,
             visualDensity: VisualDensity.adaptivePlatformDensity,
-            textTheme: const TextTheme(
-              bodyLarge: TextStyle(color: Colors.black),
-            ),
           ),
           darkTheme: ThemeData(
             primarySwatch: Colors.blue,
             brightness: Brightness.dark,
             visualDensity: VisualDensity.adaptivePlatformDensity,
-            textTheme: const TextTheme(
-              bodyLarge: TextStyle(color: Colors.white),
-            ),
           ),
           themeMode: themeMode, // Burada tema modunu ayarlıyoruz
           routerConfig: router,
-          debugShowCheckedModeBanner: false,
+          debugShowCheckedModeBanner: false, // Debug bandını kaldır
         );
       },
     );
