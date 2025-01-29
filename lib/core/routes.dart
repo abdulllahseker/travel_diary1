@@ -1,7 +1,6 @@
 // ignore: unused_import
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/history_screen.dart';
-import 'package:flutter_app/screens/voice_screen.dart';
 import 'package:go_router/go_router.dart';
 import '../screens/loading_screen.dart';
 import '../screens/home_screen.dart';
@@ -23,10 +22,6 @@ final router = GoRouter(
     GoRoute(
       path: '/profile',
       builder: (context, state) => const ProfileScreen(),
-    ),
-    GoRoute(
-      path: '/voice',
-      builder: (context, state) => const VoiceScreen(),
     ),
     GoRoute(
       path: '/search',
