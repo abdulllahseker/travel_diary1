@@ -78,6 +78,11 @@ lib/
 ![profile_ekrani_karanlik](https://github.com/user-attachments/assets/1970bd34-a101-47a7-abf6-67e1c274951e)
 
 
+## Demo Videosu
+
+
+https://youtube.com/shorts/SJL90LgojT4?si=pdK8womwKd3hB7Hp
+
 
 ## Projeye Katkı Sağlama
 
